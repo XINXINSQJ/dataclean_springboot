@@ -20,7 +20,7 @@ public class StructdataController {
         return  structdataDao.findAll();
     }
 
-    @PostMapping("/add")
+    @GetMapping("/add")
     public String save(@RequestBody Structdata structdata){
         System.out.println(structdata.getAddress());
         Structdata result=structdataDao.save(structdata);

@@ -23,4 +23,19 @@ public class Test_dataController {
 
     }
 
+    @GetMapping("/datas")
+    public List<Test_data> returnDataList(@RequestParam(value = "sensorType")String sensorType,
+                                          @RequestParam(value = "startTime")Long startTime,
+                                          @RequestParam(value = "endTime")Long entTime,
+                                          @RequestParam(value = "page")Integer page,
+                                          @RequestParam(value = "pageSize")Integer pageSize){
+        if(sensorType.equals("all")){
+            Integer start=(page-1)*pageSize;
+            return test_dataDao.findAllData(startTime,entTime,start,pageSize);
+        }
+        else{
+            return test_dataDao.findTypeData(sensorType, startTime, entTime, page,pageSize);
+        }
+    }
+
 }

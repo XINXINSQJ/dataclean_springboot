@@ -1,5 +1,6 @@
 package com.dataclean.dataclean_springboot.entity;
 
+
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -9,21 +10,18 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-public class Test_data {
+public class Gpsdata {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Integer id;
-    private String sensorname;
-    private String cmd;
-    private Long starttime;
-    private Long repairtime;
-    private Float cleandata;
-    private Float dirtydata;
+    private Integer carid;
+    private String time;
+    private Float cleanlng;
+    private Float cleanlat;
+    private Float lng;
+    private Float lat;
     private Integer detectionresult;
-    private Float repairdata;
+    private Float repairlng;
+    private Float repairlat;
     private Integer repairresult;
-    private Float cleaningtime;
-    private Float conversiondata;
-    private Integer conversionresult;
-    private String timeshow;
 }
